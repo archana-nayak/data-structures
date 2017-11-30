@@ -7,6 +7,7 @@ var Queue = function() {
   
 };
 
+
 Queue.prototype.enqueue = function(value) {
   this.storage[this.end++] = value;
 };
@@ -26,3 +27,5 @@ Queue.prototype.size = function() {
   return this.end - this.start;
 };
 
+
+var myQueue = new Queue();
