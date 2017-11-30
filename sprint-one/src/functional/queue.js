@@ -1,3 +1,4 @@
+
 var Queue = function() {
   var someInstance = {};
 
