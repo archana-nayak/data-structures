@@ -19,14 +19,11 @@ treeMethods.addChild = function(value) {
 treeMethods.contains = function(target) {
   //var tree = null || this.
   if (this.value === target) {
-    console.dir(this.value);
     return true;
   } 
 
-   
   for (var i = 0; i < this.children.length; i++) {
-    var containsTarget = this.children[i].contains(target);
-    if (containsTarget) {
+    if (this.children[i].contains(target)) {
       return true;
     }
   } 
