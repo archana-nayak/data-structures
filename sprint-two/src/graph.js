@@ -2,6 +2,9 @@
 
 // Instantiate a new graph
 var Graph = function() {
+  this.nodes = {}; // Graph is a collection of nodes
+  // To look for the edges , lookup the nodes which store
+  //the edges that connect to it.
 };
 
 // Add a node to the graph, passing in the node's value.
