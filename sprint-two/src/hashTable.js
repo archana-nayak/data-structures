@@ -11,27 +11,28 @@ HashTable.prototype.insert = function(k, v) {
 };
 
 HashTable.prototype.createBucket = function(k, v, index) {
-  var bucket;
-  var tuple;
+  var bucket, tuple;
+
   if (this._storage[index] === undefined) {
     bucket = [];
     tuple = [];
     tuple.push(k, v);
     bucket.push(tuple);
     this._storage[index] = bucket;
-  } else {
-    for (var i = 0; i < this._storage[index].length; i++) {
-      if (this._storage[index][i][0] === k) {
-        var previousValue = this._storage[index][i][1];
-        this._storage[index][i][1] = v;
-        return previousValue;
-      } else {
-        
-      }
+  } 
+
+  for (var i = 0; i < this._storage[index].length; i++) {
+    bucket = this._storage[index];
+    if (bucket[i][0] === k) {
+      var previousValue = bucket[i][1];
+      bucket[i][1] = v;
+      return previousValue;
+    } else {
+      tuple = [];
+      tuple.push(k, v);
+      bucket.push(tuple);
     }
   }
-
-  
 };
 
 HashTable.prototype.retrieve = function(k) {
@@ -61,11 +62,14 @@ HashTable.prototype.remove = function(k) {
 };
 
 
-
-
-
 /*
  * Complexity: What is the time complexity of the above functions?
+   Complexity for every operation is Linear
+   Time complexity of remove(), retrieve() and insert() in a hash table are 
+   constant time.
+   In our case, because n starts at 8 and will most probably be a small number,
+   in that case the time complexity will be linear 
+   (in terms of the length of the bucket array).
  */
 
 
