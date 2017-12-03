@@ -92,6 +92,12 @@ Graph.prototype.forEachNode = function(cb) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ Time complexity of contains and addNode is o(1) and addEdge is o(1).
+ Time complexity of removeNode is o(n) where n is the number of edges in the 
+ node to be deleted
+ Time complexity of removeEdge and addEdge is o(1)
+ Time complexity of forEachNode is o(n) where n is the number of nodes in
+ the graph.
  */
 
 
