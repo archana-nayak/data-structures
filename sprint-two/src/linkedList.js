@@ -21,8 +21,13 @@ var LinkedList = function() {
     if (list.head !== null) {
       deletedItem = list.head;
       result = deletedItem.value;
-      list.head = list.head.next;
-      deletedItem.next = null;
+      if(list.head !== list.tail){
+        list.head = list.head.next;
+        deletedItem.next = null;
+      } else{
+        list.head = null;
+        list.tail = null;
+      }
       delete deletedItem;
     } 
     return result;
